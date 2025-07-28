@@ -4,7 +4,7 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import axios from 'axios';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  const query = req.query.query || 'medical nonprofit conference Texas 2024';
+  const query = req.query.q || 'medical nonprofit conference Texas 2024';
   const serpApiKey = process.env.SERPAPI_API_KEY;
 
   try {
