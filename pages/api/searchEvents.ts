@@ -19,7 +19,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   const allResults: any[] = [];
 
   try {
-    for (const query of queries) {
+    for (const q of queries) {
       const response = await axios.get('https://serpapi.com/search.json', {
         params: {
           q: query,
