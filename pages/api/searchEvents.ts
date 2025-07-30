@@ -1,3 +1,5 @@
+
+
 import type { NextApiRequest, NextApiResponse } from 'next';
 import axios from 'axios';
 
@@ -12,20 +14,21 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     'medical volunteer speaker opportunities 2025',
     'medical volunteer speaker opportunities 2026',
     'public health summit Texas 2025',
-    'public health summit Texas 2026'
+    'public health summit Texas 2026',
   ];
 
   const serpApiKey = process.env.SERPAPI_API_KEY;
-  const allResults: any[] = [];
 
   try {
+    let allResults: any[] = [];
+
     for (const q of queries) {
       const response = await axios.get('https://serpapi.com/search.json', {
         params: {
-          q: query,
+          q,
           engine: 'google',
           api_key: serpApiKey,
-          num: 20
+          num: 10,
         },
       });
 
@@ -39,7 +42,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         !result.title.toLowerCase().includes('documentation')
       );
 
-      allResults.push(...filtered);
+      allResults = allResults.concat(filtered);
     }
 
     res.status(200).json({ success: true, events: allResults });
