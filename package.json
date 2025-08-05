@@ -7,14 +7,9 @@
     "start": "next start"
   },
   "dependencies": {
-    "axios": "^1.6.7",
-    "next": "^13.4.12",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  },
-  "devDependencies": {
-    "@types/node": "^18.17.17",
-    "@types/react": "^18.2.15",
-    "typescript": "^5.2.2"
+    "axios": "^1.6.0",
+    "next": "13.4.19",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   }
 }
