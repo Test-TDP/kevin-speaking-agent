@@ -34,12 +34,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
       const rawResults = response.data.organic_results || [];
 
-      const filtered = rawResults.filter(result =>
+      const filtered = rawResults.filter((result: any) =>
         result.title &&
         result.link &&
         !result.link.includes('vercel.com') &&
         !result.link.includes('github.com') &&
-        !result.title.toLowerCase().includes('documentation')
+        !result.link.includes('linkedin.com')
       );
 
       allResults = allResults.concat(filtered);
