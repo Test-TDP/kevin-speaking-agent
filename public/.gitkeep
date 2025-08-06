@@ -1,3 +1,1 @@
-git rm delete-me-public-file
-git commit -m "Remove old file that conflicted with public folder"
-git push
+Create empty public folder with .gitkeep
